@@ -6,8 +6,8 @@ const dataFields = new URLSearchParams({
 function fetchCountries(name) {
     const URL = `${BASE_URL}${name}?&${dataFields}`;
     return fetch(URL).then(response => {
-        if (!response.ok) {
-            throw new Error('No such country was found!', response.statusText)
+        if (response.status === 404) {
+            throw new Error(response.statusText)
         }
         return response.json();
     })

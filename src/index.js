@@ -18,8 +18,10 @@ function onInput(event) {
     if (!searchCountry) {
         countriesList.innerHTML = '';
         countryInfo.innerHTML = '';
-        return
+        countryInfo.hidden = true;
+        return;
     }
+
     fetchCountries(searchBox.value)
         .then(data => {
             if (data.length === 1) {
@@ -31,13 +33,12 @@ function onInput(event) {
                 countryInfo.hidden = true;
                 countriesList.hidden = false;
                 countriesList.innerHTML = createMarkupList(data);
-            } else if (data.length > 10) {
+            } else {
                 countriesList.innerHTML = '';
                 countryInfo.hidden = true;
                 Notify.info("Too many matches found. Please enter a more specific name.")
             }
         })
-
         .catch(error => {
             countriesList.innerHTML = '';
             countryInfo.innerHTML = '';
