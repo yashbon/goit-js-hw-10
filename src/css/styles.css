@@ -18,3 +18,28 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+
+/* my styles*/
+.country-info {
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: WhiteSmoke;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li {
+  list-style-type: none;
+}
+
+li img {
+  margin-right: 10px;
+  vertical-align: middle;
+
+}
+
+span {
+  font-weight: bold;
+}
